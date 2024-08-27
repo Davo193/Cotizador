@@ -1,350 +1,179 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>50K</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .container {
-            margin: 20px;
-        }
-        .header {
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Tarifas de Viaje 50K</h1>
-        </div>
-        
-        <!-- Tabla 1: 50K PREEX -->
-        <table>
-            <thead>
-                <tr>
-                    <th>Producto: 40K</th>
-                    <th>Monto:</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Asistencia Médica por enfermedad o accidente hasta</td>
-                    <td>$40,000 (*)</td>
-                </tr>
-                <tr>
-                    <td>Asistencia Médica por enfermedad preexistente</td>
-                    <td>$400 (sin límite de edad)</td>
-                </tr>
-                <tr>
-                    <td>Asistencia Médica por Covid-19 hasta</td>
-                    <td>Hasta el tope</td>
-                </tr>
-                <tr>
-                    <td>Asistencia Médica en Cruceros</td>
-                    <td>Hasta el tope</td>
-                </tr>
-                <tr>
-                    <td>Días complementarios por internación hasta</td>
-                    <td>Hasta el tope</td>
-                </tr>
-                <tr>
-                    <td>Emergencia Dental hasta</td>
-                    <td>$400</td>
-                </tr>
-                <tr>
-                    <td>Medicamentos hasta</td>
-                    <td>$500</td>
-                </tr>
-                <tr>
-                    <td>Traslado Sanitario, Repatriación Sanitaria y/o Funeraria hasta</td>
-                    <td>Hasta el tope</td>
-                </tr>
-                <tr>
-                    <td>Boleto Aéreo por Traslado de familiar por hospitalización.</td>
-                    <td>Si aplica</td>
-                </tr>
-                <tr>
-                    <td>Hotel de Familiar acompañante hasta</td>
-                    <td>$250</td>
-                </tr>
-                <tr>
-                    <td>Hotel por Convalecencia hasta</td>
-                    <td>$400</td>
-                </tr>
-                <tr>
-                    <td>Boleto Aéreo por Acompañamiento de menores</td>
-                    <td>Si aplica</td>
-                </tr>
-                <tr>
-                    <td>Cancelación de antes de iniciar su Viaje (0 a 75 años) hasta</td>
-                    <td>$800</td>
-                </tr>
-                <tr>
-                    <td>Gastos por Demora de Equipaje (después de 36hrs) hasta</td>
-                    <td>$150</td>
-                </tr>
-                <tr>
-                    <td>Compensación por pérdida de equipaje hasta</td>
-                    <td>$1,200</td>
-                </tr>
-                <tr>
-                    <td>Compensación por ruptura (no daño) de equipaje hasta NUEVO</td>
-                    <td>$100</td>
-                </tr>
-                <tr>
-                    <td>Gastos por vuelo demorado (por más de 6 horas) hasta</td>
-                    <td>$120</td>
-                </tr>
-                <tr>
-                    <td>Boleto Aéreo por Repatriación por quiebra de la compañía aérea</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Boleto Aéreo por Regreso anticipado por siniestro en domicilio</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Boleto Aéreo por Regreso anticipado por fallecimiento de familiar</td>
-                    <td>Si aplica</td>
-                </tr>
-                <tr>
-                    <td>Boleto Aéreo por Garantía de regreso con orden médica</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Asistencia Legal por accidente de tránsito hasta</td>
-                    <td>$1,000</td>
-                </tr>
-                <tr>
-                    <td>Transferencia de fondos hasta</td>
-                    <td>$3,000</td>
-                </tr>
-                <tr>
-                    <td>Transferencia de fondos para fianza legal hasta</td>
-                    <td>$10,000</td>
-                </tr>
-                <tr>
-                    <td>Transmisión de mensajes urgentes</td>
-                    <td>Incluido</td>
-                </tr>
-                <tr>
-                    <td>Orientación en caso de extravío de documentos, equipajes</td>
-                    <td>Incluido</td>
-                </tr>
-                <tr>
-                    <td>Muerte accidental en transporte público. Monto fijo</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Deporte amateur o profesional dentro y fuera de cancha deportiva</td>
-                    <td>$10,000</td>
-                </tr>
-                <tr>
-                    <td>Cobertura geográfica país de residencia A partir 80 km</td>
-                    <td>Si aplica</td>
-                </tr>
-                <tr>
-                    <td>Ejecutivo reemplazante boleto aéreo clase turista</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Riesgo Laboral</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Cobertura geográfica exterior</td>
-                    <td>Mundial</td>
-                </tr>
-                <tr>
-                    <td>Cobertura embarazo incluido a semana 24 (19 a 45 años)</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Tarifa INDIVIDUAL de 0 a 75 años:</td>
-                    <td id="tarifa75_50k" class="tarifa"></td>
-                </tr>
-                <tr>
-                    <td>Tarifa INDIVIDUAL de 76 a 85 años:</td>
-                    <td id="tarifa85_50k" class="tarifa"></td>
-                </tr>
-                <tr>
-                    <td>Tarifa INDIVIDUAL de 86 años en adelante:</td>
-                    <td id="tarifa86" class="tarifa"></td>
-                </tr>
-            </tbody>
-        </table>
-<BR><BR>
-        <!-- Tabla 2: 40K PREEX -->
-        <h2>Tarifas 40K PREEX</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Producto: 40K PREEX</th>
-                    <th>Monto:</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Asistencia Médica por enfermedad o accidente hasta</td>
-                    <td>$40,000 (*)</td>
-                </tr>
-                <tr>
-                    <td>Asistencia Médica por enfermedad preexistente</td>
-                    <td>$7,000 (0 a 75 años) $5,000 (76 a 120 años)</td>
-                </tr>
-                <tr>
-                    <td>Asistencia Médica por Covid-19 hasta</td>
-                    <td>Hasta el tope</td>
-                </tr>
-                <tr>
-                    <td>Asistencia Médica en Cruceros</td>
-                    <td>Hasta el tope</td>
-                </tr>
-                <tr>
-                    <td>Días complementarios por internación hasta</td>
-                    <td>Hasta el tope</td>
-                </tr>
-                <tr>
-                    <td>Emergencia Dental hasta</td>
-                    <td>$400</td>
-                </tr>
-                <tr>
-                    <td>Medicamentos hasta</td>
-                    <td>$500</td>
-                </tr>
-                <tr>
-                    <td>Traslado Sanitario, Repatriación Sanitaria y/o Funeraria hasta</td>
-                    <td>Hasta el tope</td>
-                </tr>
-                <tr>
-                    <td>Boleto Aéreo por Traslado de familiar por hospitalización.</td>
-                    <td>Si aplica</td>
-                </tr>
-                <tr>
-                    <td>Hotel de Familiar acompañante hasta</td>
-                    <td>$250</td>
-                </tr>
-                <tr>
-                    <td>Hotel por Convalecencia hasta</td>
-                    <td>$400</td>
-                </tr>
-                <tr>
-                    <td>Boleto Aéreo por Acompañamiento de menores</td>
-                    <td>Si aplica</td>
-                </tr>
-                <tr>
-                    <td>Cancelación de antes de iniciar su Viaje (0 a 75 años) hasta</td>
-                    <td>$800</td>
-                </tr>
-                <tr>
-                    <td>Gastos por Demora de Equipaje (después de 36hrs) hasta</td>
-                    <td>$150</td>
-                </tr>
-                <tr>
-                    <td>Compensación por pérdida de equipaje hasta</td>
-                    <td>$1,200</td>
-                </tr>
-                <tr>
-                    <td>Compensación por ruptura (no daño) de equipaje hasta NUEVO</td>
-                    <td>$100</td>
-                </tr>
-                <tr>
-                    <td>Gastos por vuelo demorado (por más de 6 horas) hasta</td>
-                    <td>$120</td>
-                </tr>
-                <tr>
-                    <td>Boleto Aéreo por Repatriación por quiebra de la compañía aérea</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Boleto Aéreo por Regreso anticipado por siniestro en domicilio</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Boleto Aéreo por Regreso anticipado por fallecimiento de familiar</td>
-                    <td>Si aplica</td>
-                </tr>
-                <tr>
-                    <td>Boleto Aéreo por Garantía de regreso con orden médica</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Asistencia Legal por accidente de tránsito hasta</td>
-                    <td>$1,000</td>
-                </tr>
-                <tr>
-                    <td>Transferencia de fondos hasta</td>
-                    <td>$3,000</td>
-                </tr>
-                <tr>
-                    <td>Transferencia de fondos para fianza legal hasta</td>
-                    <td>$10,000</td>
-                </tr>
-                <tr>
-                    <td>Transmisión de mensajes urgentes</td>
-                    <td>Incluido</td>
-                </tr>
-                <tr>
-                    <td>Orientación en caso de extravío de documentos, equipajes</td>
-                    <td>Incluido</td>
-                </tr>
-                <tr>
-                    <td>Muerte accidental en transporte público. Monto fijo</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Deporte amateur o profesional dentro y fuera de cancha deportiva</td>
-                    <td>$10,000</td>
-                </tr>
-                <tr>
-                    <td>Cobertura geográfica país de residencia A partir 80 km</td>
-                    <td>Si aplica</td>
-                </tr>
-                <tr>
-                    <td>Ejecutivo reemplazante boleto aéreo clase turista</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Riesgo Laboral</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Cobertura geográfica exterior</td>
-                    <td>Mundial</td>
-                </tr>
-                <tr>
-                    <td>Cobertura embarazo incluido a semana 24 (19 a 45 años)</td>
-                    <td>No aplica</td>
-                </tr>
-                <tr>
-                    <td>Tarifa INDIVIDUAL de 0 a 75 años:</td>
-                    <td id="tarifa75_40k_preex" class="tarifa"></td>
-                </tr>
-                <tr>
-                    <td>Tarifa INDIVIDUAL de 76 a 85 años:</td>
-                    <td id="tarifa85_40k_preex" class="tarifa"></td>
-                </tr>
-                <tr>
-                    <td>Tarifa INDIVIDUAL de 86 años en adelante:</td>
-                    <td id="tarifa86_40k_preex" class="tarifa"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+<!-- 50k.html -->
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th colspan="2">50K PREEX PLUS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Asistencia Médica por enfermedad o accidente hasta</td>
+            <td>$50,000 (*)</td>
+        </tr>
+        <tr>
+            <td>Asistencia Médica por enfermedad preexistente</td>
+            <td>$50,000 (0 a 75 años) $15,000 (76 a 85 años)</td>
+        </tr>
+        <tr>
+            <td>Asistencia Médica por Covid-19 hasta</td>
+            <td>Hasta el tope</td>
+        </tr>
+        <tr>
+            <td>Asistencia Médica en Cruceros</td>
+            <td>Hasta el tope</td>
+        </tr>
+        <tr>
+            <td>Días complementarios por internación hasta</td>
+            <td>Hasta el tope</td>
+        </tr>
+        <tr>
+            <td>Emergencia Dental hasta</td>
+            <td>$400</td>
+        </tr>
+        <tr>
+            <td>Medicamentos hasta</td>
+            <td>Hasta el tope</td>
+        </tr>
+        <tr>
+            <td>Traslado Sanitario, Repatriación Sanitaria y/o Funeraria hasta</td>
+            <td>Hasta el tope</td>
+        </tr>
+        <tr>
+            <td>Boleto Aéreo por Traslado de familiar por hospitalización.</td>
+            <td>Si aplica</td>
+        </tr>
+        <tr>
+            <td>Hotel de Familiar acompañante hasta</td>
+            <td>$250</td>
+        </tr>
+        <tr>
+            <td>Hotel por Convalecencia hasta</td>
+            <td>$500</td>
+        </tr>
+        <tr>
+            <td>Boleto Aéreo por Acompañamiento de menores</td>
+            <td>Si aplica</td>
+        </tr>
+        <tr>
+            <td>Cancelación de antes de iniciar su Viaje (0 a 75 años) hasta</td>
+            <td>No aplica*</td>
+        </tr>
+        <tr>
+            <td>Gastos por Demora de Equipaje (después de 36hrs) hasta</td>
+            <td>$300</td>
+        </tr>
+        <tr>
+            <td>Compensación por pérdida de equipaje hasta</td>
+            <td>$1,200</td>
+        </tr>
+        <tr>
+            <td>Compensación por ruptura (no daño) de equipaje hasta NUEVO</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Gastos por vuelo demorado (por más de 6 horas) hasta</td>
+            <td>$120</td>
+        </tr>
+        <tr>
+            <td>Boleto Aéreo por Repatriación por quiebra de la compañía aérea</td>
+            <td>Si aplica</td>
+        </tr>
+        <tr>
+            <td>Boleto Aéreo por Regreso anticipado por siniestro en domicilio</td>
+            <td>Si aplica</td>
+        </tr>
+        <tr>
+            <td>Boleto Aéreo por Regreso anticipado por fallecimiento de familiar</td>
+            <td>Si aplica</td>
+        </tr>
+        <tr>
+            <td>Boleto Aéreo por Garantía de regreso con orden médica</td>
+            <td>Si aplica</td>
+        </tr>
+        <tr>
+            <td>Asistencia Legal por accidente de tránsito hasta</td>
+            <td>$10,000</td>
+        </tr>
+        <tr>
+            <td>Transferencia de fondos hasta</td>
+            <td>$3,000</td>
+        </tr>
+        <tr>
+            <td>Transferencia de fondos para fianza legal hasta</td>
+            <td>$10,000</td>
+        </tr>
+        <tr>
+            <td>Transmisión de mensajes urgentes</td>
+            <td>Incluido</td>
+        </tr>
+        <tr>
+            <td>Orientación en caso de extravío de documentos, equipajes</td>
+            <td>Incluido</td>
+        </tr>
+        <tr>
+            <td>Muerte accidental en transporte público. Monto fijo</td>
+            <td>$50,000</td>
+        </tr>
+        <tr>
+            <td>Deporte amateur o profesional dentro y fuera de cancha deportiva</td>
+            <td>Upgrade</td>
+        </tr>
+        <tr>
+            <td>Cobertura geográfica país de residencia A partir 80 km</td>
+            <td>Si aplica</td>
+        </tr>
+        <tr>
+            <td>Ejecutivo reemplazante boleto aéreo clase turista</td>
+            <td>No aplica</td>
+        </tr>
+        <tr>
+            <td>Riesgo Laboral</td>
+            <td>Upgrade</td>
+        </tr>
+        <tr>
+            <td>Cobertura geográfica exterior</td>
+            <td>Mundial</td>
+        </tr>
+        <tr>
+            <td>Cobertura embarazo incluido a semana 24 (19 a 45 años)</td>
+            <td>$10,000</td>
+        </tr>
+        <tr>
+            <td>Tarifa INDIVIDUAL de 0 a 75 años</td>
+            <td>número de días multiplicado por 16</td>
+        </tr>
+        <tr>
+            <td>Tarifa INDIVIDUAL de 76 a 85 años</td>
+            <td>número de días multiplicado por 25.6</td>
+        </tr>
+        <tr>
+            <td>Tarifa INDIVIDUAL de 86 años en adelante</td>
+            <td>No aplica</td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th colspan="2">50K PREEX</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Asistencia Médica por enfermedad o accidente hasta</td>
+            <td>$50,000 (*)</td>
+        </tr>
+        <tr>
+            <td>Asistencia Médica por enfermedad preexistente</td>
+            <td>$7,000 (0 a 75 años) $4,000 (76 a 85 años)</td>
+        </tr>
+        <tr>
+            <td>Asistencia Médica por Covid-19 hasta</td>
+            <td>Hasta el tope</td>
+        </tr>
+        <tr>
+            <td>Asistencia Médica en Cruceros</td>
+            <td>Hasta el tope</td>
+        </tr>
+        <tr>
