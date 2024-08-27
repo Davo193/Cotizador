@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador de Viaje</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Cotizador de Viaje</h1>
+        <p>Tarifa cotizada sujeta a cambio sin previo aviso</p>
+    </div>
+
+    <div class="content">
+        <div class="form-group">
+            <label for="fechaSalida">Fecha de Salida:</label>
+            <input type="date" id="fechaSalida" name="fechaSalida">
+        </div>
+        <div class="form-group">
+            <label for="fechaRegreso">Fecha de Regreso:</label>
+            <input type="date" id="fechaRegreso" name="fechaRegreso">
+        </div>
+        <div class="form-group">
+            <label>Total días:</label>
+            <div id="totalDias" class="total-days">0</div>
+        </div>
+        <div class="form-group">
+            <label for="monto">Seleccione el monto del beneficio:</label>
+            <select id="monto" name="monto">
+                <option value="">Seleccione un monto</option>
+                <option value="20000">$20k</option>
+                <option value="30000">$30k</option>
+                <!-- (Other options) -->
+            </select>
+        </div>
+        <button class="btn" onclick="mostrarTabla()">Ver</button>
+    </div>
+
+    <div id="tablaCotizador" class="content">
+        <!-- Aquí se cargará la tabla -->
+    </div>
+</div>
+
+<script>
+    const fechaSalida = document.getElementById('fechaSalida');
+    const fechaRegreso = document.getElementById('fechaRegreso');
+    const totalDias = document.getElementById('totalDias');
+    const tablaCotizador = document.getElementById('tablaCotizador');
+
+    function calcularDias() {
+        if (fechaSalida.value && fechaRegreso.value) {
+            const fechaInicio = new Date(fechaSalida.value);
+            const fechaFin = new Date(fechaRegreso.value);
+            const diferencia = Math.floor((fechaFin - fechaInicio) / (1000 * 60 * 60 * 24)) + 1;
+            totalDias.textContent = `${diferencia} día(s)`;
+        }
+    }
+
+    fechaSalida.addEventListener('change', calcularDias);
+    fechaRegreso.addEventListener('change', calcularDias);
+
+    function mostrarTabla() {
+        const montoSeleccionado = document.getElementById('monto').value;
+        let archivoTabla = '';
+
+        if (montoSeleccionado === '20000') {
+            archivoTabla = '20k.html';
+        } else if (montoSeleccionado === '30000') {
+            archivoTabla = '30k.html';
+        }
+
+        if (archivoTabla) {
+            fetch(archivoTabla)
+                .then(response => response.text())
+                .then(data => {
+                    tablaCotizador.innerHTML = data;
+                    actualizarTarifas(montoSeleccionado);
+                });
+        }
+    }
+
+    function actualizarTarifas(montoSeleccionado) {
+        const dias = parseInt(totalDias.textContent);
+        if (montoSeleccionado === '20000') {
+            document.getElementById('tarifa20k-0-75').textContent = `${(dias * 3.25).toFixed(2)} USD`;
+            document.getElementById('tarifa20k-76-85').textContent = `${(dias * 5.2).toFixed(2)} USD`;
+        } else if (montoSeleccionado === '30000') {
+            document.getElementById('tarifa30k-0-75').textContent = `${(dias * 5).toFixed(2)} USD`;
+            document.getElementById('tarifa30k-76-85').textContent = `${(dias * 8).toFixed(2)} USD`;
+        }
+    }
+</script>
+
+</body>
+</html>
