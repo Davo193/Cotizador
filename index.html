@@ -33,66 +33,67 @@
                 <option value="">Seleccione un monto</option>
                 <option value="20000">$20k</option>
                 <option value="30000">$30k</option>
-                <!-- (Other options) -->
             </select>
         </div>
         <button class="btn" onclick="mostrarTabla()">Ver</button>
     </div>
 
-    <div id="tablaCotizador" class="content">
-        <!-- Aquí se cargará la tabla -->
-    </div>
+    <!-- Contenedor para mostrar la tabla -->
+    <div id="tablaContainer"></div>
 </div>
 
 <script>
     const fechaSalida = document.getElementById('fechaSalida');
     const fechaRegreso = document.getElementById('fechaRegreso');
     const totalDias = document.getElementById('totalDias');
-    const tablaCotizador = document.getElementById('tablaCotizador');
+    let dias = 0;
 
     function calcularDias() {
         if (fechaSalida.value && fechaRegreso.value) {
             const fechaInicio = new Date(fechaSalida.value);
             const fechaFin = new Date(fechaRegreso.value);
-            const diferencia = Math.floor((fechaFin - fechaInicio) / (1000 * 60 * 60 * 24)) + 1;
-            totalDias.textContent = `${diferencia} día(s)`;
+            dias = Math.floor((fechaFin - fechaInicio) / (1000 * 60 * 60 * 24)) + 1;
+            totalDias.textContent = `${dias} día(s)`;
         }
+    }
+
+    function mostrarTabla() {
+        const montoSeleccionado = document.getElementById('monto').value;
+        const tablaContainer = document.getElementById('tablaContainer');
+
+        if (montoSeleccionado === '20000') {
+            fetch('20k.html')
+                .then(response => response.text())
+                .then(data => {
+                    tablaContainer.innerHTML = data;
+                    actualizarPrecios(dias, 3.25, 5.2);
+                });
+        } else if (montoSeleccionado === '30000') {
+            fetch('30k.html')
+                .then(response => response.text())
+                .then(data => {
+                    tablaContainer.innerHTML = data;
+                    actualizarPrecios(dias, 5, 8);
+                });
+        } else {
+            alert('Por favor, seleccione una opción válida.');
+        }
+    }
+
+    function actualizarPrecios(dias, tarifa1, tarifa2) {
+        const tarifa75 = document.getElementById('tarifa75');
+        const tarifa85 = document.getElementById('tarifa85');
+        const tarifa86 = document.getElementById('tarifa86');
+
+        tarifa75.textContent = `Q${(dias * tarifa1).toFixed(2)}`;
+        tarifa85.textContent = `Q${(dias * tarifa2).toFixed(2)}`;
+        tarifa86.textContent = 'No disponible';
     }
 
     fechaSalida.addEventListener('change', calcularDias);
     fechaRegreso.addEventListener('change', calcularDias);
-
-    function mostrarTabla() {
-        const montoSeleccionado = document.getElementById('monto').value;
-        let archivoTabla = '';
-
-        if (montoSeleccionado === '20000') {
-            archivoTabla = '20k.html';
-        } else if (montoSeleccionado === '30000') {
-            archivoTabla = '30k.html';
-        }
-
-        if (archivoTabla) {
-            fetch(archivoTabla)
-                .then(response => response.text())
-                .then(data => {
-                    tablaCotizador.innerHTML = data;
-                    actualizarTarifas(montoSeleccionado);
-                });
-        }
-    }
-
-    function actualizarTarifas(montoSeleccionado) {
-        const dias = parseInt(totalDias.textContent);
-        if (montoSeleccionado === '20000') {
-            document.getElementById('tarifa20k-0-75').textContent = `${(dias * 3.25).toFixed(2)} USD`;
-            document.getElementById('tarifa20k-76-85').textContent = `${(dias * 5.2).toFixed(2)} USD`;
-        } else if (montoSeleccionado === '30000') {
-            document.getElementById('tarifa30k-0-75').textContent = `${(dias * 5).toFixed(2)} USD`;
-            document.getElementById('tarifa30k-76-85').textContent = `${(dias * 8).toFixed(2)} USD`;
-        }
-    }
 </script>
 
 </body>
 </html>
+
