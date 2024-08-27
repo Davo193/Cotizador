@@ -33,6 +33,7 @@
                 <option value="">Seleccione un monto</option>
                 <option value="20000">$20k</option>
                 <option value="30000">$30k</option>
+                <option value="40000">$40k</option>
             </select>
         </div>
         <button class="btn" onclick="mostrarTabla()">Ver</button>
@@ -75,6 +76,13 @@
                     tablaContainer.innerHTML = data;
                     actualizarPrecios(dias, 5, 8);
                 });
+        } else if (montoSeleccionado === '40000') {
+            fetch('40k.html')
+                .then(response => response.text())
+                .then(data => {
+                    tablaContainer.innerHTML = data;
+                    actualizarPrecios(dias, 6.5, 9.5); // Ajustar tarifas según corresponda
+                });
         } else {
             alert('Por favor, seleccione una opción válida.');
         }
@@ -96,5 +104,6 @@
 
 </body>
 </html>
+
 
 
