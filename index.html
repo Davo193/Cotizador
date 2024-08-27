@@ -31,9 +31,10 @@
             <label for="monto">Seleccione el monto del beneficio:</label>
             <select id="monto" name="monto">
                 <option value="">Seleccione un monto</option>
-                <option value="20000">$20k</option>
-                <option value="30000">$30k</option>
-                <option value="40000">$40k</option>
+                <option value="20000">20k</option>
+                <option value="30000">30k</option>
+                <option value="40000">40k</option>
+                <option value="50000">50k</option>
             </select>
         </div>
         <button class="btn" onclick="mostrarTabla()">Ver</button>
@@ -84,6 +85,14 @@
                     actualizarPrecios40k(dias, 5.5, 8.8, 15, 'tarifa75_40k', 'tarifa85_40k', 'tarifa86_40k');
                     actualizarPrecios40kPreex(dias, 5.75, 9.2, 17.5, 'tarifa75_40k_preex', 'tarifa85_40k_preex', 'tarifa86_40k_preex');
                 });
+            } else if (montoSeleccionado === '50000') {
+            fetch('50k.html')
+                .then(response => response.text())
+                .then(data => {
+                    tablaContainer.innerHTML = data;
+                    actualizarPrecios40k(dias, 6.5, 10.4, 'tarifa75_50k', 'tarifa85_50k');
+                    actualizarPrecios40kPreex(dias, 16, 25.6, 'tarifa75_50k_preex', 'tarifa85_50k_preex');
+                });        
         } else {
             alert('Por favor, seleccione una opción válida.');
         }
@@ -125,6 +134,5 @@
 
 </body>
 </html>
-
 
 
