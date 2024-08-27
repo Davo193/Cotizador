@@ -42,6 +42,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Filas de la tabla -->
                 <tr>
                     <td>Asistencia Médica por enfermedad o accidente hasta</td>
                     <td>$50,000 (*)</td>
@@ -199,6 +200,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Filas de la tabla -->
                 <tr>
                     <td>Asistencia Médica por enfermedad o accidente hasta</td>
                     <td>$50,000 (*)</td>
@@ -353,7 +355,6 @@
             function calcularTarifaPorEdad(montoBase, multiplicador) {
                 return montoBase * multiplicador;
             }
-            const edadBase = 75;
             const tarifa75_50k = calcularTarifaPorEdad(5.5, 1); // Ajustar según la lógica real
             const tarifa85_50k = calcularTarifaPorEdad(8.8, 1); // Ajustar según la lógica real
             const tarifa86_50k = calcularTarifaPorEdad(15, 1); // Ajustar según la lógica real
@@ -374,4 +375,3 @@
     </script>
 </body>
 </html>
-
