@@ -35,6 +35,7 @@
                 <option value="30000">30k</option>
                 <option value="40000">40k</option>
                 <option value="50000">50k</option>
+                <option value="60000">60k</option>
             </select>
         </div>
         <button class="btn" onclick="mostrarTabla()">Ver</button>
@@ -93,11 +94,19 @@
                     actualizarPrecios50k(dias, 6.5, 10.4, 'tarifa75_50k', 'tarifa85_50k', 'tarifa86_50k');
                     actualizarPrecios50kPreexPlus(dias, 16, 25.6, 'tarifa75_50k_preex_plus', 'tarifa85_50k_preex_plus', 'tarifa86_50k_preex_plus');
                 });
+        } else if (montoSeleccionado === '60000') {
+            fetch('60k.html')
+                .then(response => response.text())
+                .then(data => {
+                    tablaContainer.innerHTML = data;
+                    actualizarPrecios60k(dias, 6.5, 10.4, 18, 'tarifa75_60k', 'tarifa85_60k', 'tarifa86_60k');
+                    actualizarPrecios60kPreex(dias, 7, 'tarifa75_60k_preex', 'tarifa85_60k_preex', 'tarifa86_60k_preex');
+                });
         } else {
             alert('Por favor, seleccione una opción válida.');
         }
     }
-
+    
     function actualizarPrecios(dias, tarifa1, tarifa2) {
         const tarifa75 = document.getElementById('tarifa75');
         const tarifa85 = document.getElementById('tarifa85');
@@ -154,6 +163,4 @@
 
 </body>
 </html>
-
-
 
