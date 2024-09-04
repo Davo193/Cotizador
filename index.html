@@ -116,8 +116,8 @@
                 .then(response => response.text())
                 .then(data => {
                     tablaContainer.innerHTML = data;
-                    actualizarPrecios100k(dias, 25, 40, 'tarifa75_100k', 'tarifa85_100k', 'tarifa86_100k');
-                    actualizarPrecios100kPreex(dias, 9.5, 14, 'tarifa75_100k_preex', 'tarifa85_100k_preex', 'tarifa86_100k_preex');
+                    actualizarPrecios100k(dias, 9.5, 14, 'tarifa75_100k', 'tarifa85_100k', 'tarifa86_100k');
+                    actualizarPrecios100kPreex(dias, 25, 40, 'tarifa75_100k_preex', 'tarifa85_100k_preex', 'tarifa86_100k_preex');
                 });     
         } else {
             alert('Por favor, seleccione una opción válida.');
@@ -231,5 +231,4 @@
 </script>
 </body>
 </html>
-
 
