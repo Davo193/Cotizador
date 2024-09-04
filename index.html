@@ -37,6 +37,7 @@
                 <option value="50000">50k</option>
                 <option value="60000">60k</option>
                 <option value="80000">80k</option>
+                <option value="100000">100k</option>
             </select>
         </div>
         <button class="btn" onclick="mostrarTabla()">Ver</button>
@@ -110,6 +111,14 @@
                     tablaContainer.innerHTML = data;
                     actualizarPrecios80k(dias, 8, 12.8, 'tarifa75_80k', 'tarifa85_80k', 'tarifa86_80k');
                 });
+        } else if (montoSeleccionado === '100000') {
+            fetch('100k.html')
+                .then(response => response.text())
+                .then(data => {
+                    tablaContainer.innerHTML = data;
+                    actualizarPrecios100k(dias, 25, 40, 'tarifa75_100k', 'tarifa85_100k', 'tarifa86_100k');
+                    actualizarPrecios100kPreex(dias, 9.5, 14, 'tarifa75_100k_preex', 'tarifa85_100k_preex', 'tarifa86_100k_preex');
+                });     
         } else {
             alert('Por favor, seleccione una opción válida.');
         }
@@ -195,9 +204,32 @@
         tarifa86.textContent = 'No aplica';
     }
 
+    function actualizarPrecios100k(dias, tarifa1, tarifa2, tarifa75Id, tarifa85Id, tarifa86Id) {
+        const tarifa75 = document.getElementById(tarifa75Id);
+        const tarifa85 = document.getElementById(tarifa85Id);
+        const tarifa86 = document.getElementById(tarifa86Id);
+
+        tarifa75.textContent = `$${(dias * tarifa1).toFixed(2)}`;
+        tarifa85.textContent = `$${(dias * tarifa2).toFixed(2)}`;
+        tarifa86.textContent = 'No aplica';
+
+    }
+
+    function actualizarPrecios100kPreex(dias, tarifa1, tarifa2, tarifa75Id, tarifa85Id, tarifa86Id) {
+        const tarifa75 = document.getElementById(tarifa75Id);
+        const tarifa85 = document.getElementById(tarifa85Id);
+        const tarifa86 = document.getElementById(tarifa86Id);
+
+        tarifa75.textContent = `$${(dias * tarifa1).toFixed(2)}`;
+        tarifa85.textContent = `$${(dias * tarifa2).toFixed(2)}`;
+        tarifa86.textContent = 'No aplica';
+    
+    }
+
     fechaSalida.addEventListener('change', calcularDias);
     fechaRegreso.addEventListener('change', calcularDias);
 </script>
 </body>
 </html>
+
 
