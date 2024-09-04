@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cotizador de Viaje</title>
+    <title>Cotizador Celeste</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
     <div class="header">
-        <h1>Cotizador de Viaje</h1>
+        <h1>Cotizador Celeste</h1>
         <p>Tarifa cotizada sujeta a cambio sin previo aviso</p>
     </div>
 
@@ -36,6 +36,7 @@
                 <option value="40000">40k</option>
                 <option value="50000">50k</option>
                 <option value="60000">60k</option>
+                <option value="80000">80k</option>
             </select>
         </div>
         <button class="btn" onclick="mostrarTabla()">Ver</button>
@@ -102,6 +103,13 @@
                     actualizarPrecios60k(dias, 6.5, 10.4, 18, 'tarifa75_60k', 'tarifa85_60k', 'tarifa86_60k');
                     actualizarPrecios60kPreex(dias, 7, 'tarifa75_60k_preex', 'tarifa85_60k_preex', 'tarifa86_60k_preex');
                 });
+        } else if (montoSeleccionado === '80000') {
+            fetch('80k.html')
+                .then(response => response.text())
+                .then(data => {
+                    tablaContainer.innerHTML = data;
+                    actualizarPrecios80k(dias, 8, 12.8, 'tarifa75_80k', 'tarifa85_80k', 'tarifa86_80k');
+                });
         } else {
             alert('Por favor, seleccione una opción válida.');
         }
@@ -167,20 +175,29 @@
         tarifa86.textContent = `$${(dias * tarifa3).toFixed(2)}`;
     }
 
-    function actualizarPrecios60kPreex(dias, tarifa1, tarifa75Id, tarifa85Id, tarifa86Id) {
+    function actualizarPrecios60kPreex(dias, tarifa1, tarifa2, tarifa75Id, tarifa85Id, tarifa86Id) {
         const tarifa75 = document.getElementById(tarifa75Id);
         const tarifa85 = document.getElementById(tarifa85Id);
         const tarifa86 = document.getElementById(tarifa86Id);
 
         tarifa75.textContent = `$${(dias * tarifa1).toFixed(2)}`;
-        tarifa85.textContent = 'No aplica';
+        tarifa85.textContent = `$${(dias * tarifa2).toFixed(2)}`;
+        tarifa86.textContent = 'No aplica';
+    }
+
+    function actualizarPrecios80k(dias, tarifa1, tarifa2, tarifa75Id, tarifa85Id, tarifa86Id) {
+        const tarifa75 = document.getElementById(tarifa75Id);
+        const tarifa85 = document.getElementById(tarifa85Id);
+        const tarifa86 = document.getElementById(tarifa86Id);
+
+        tarifa75.textContent = `$${(dias * tarifa1).toFixed(2)}`;
+        tarifa85.textContent = `$${(dias * tarifa2).toFixed(2)}`;
         tarifa86.textContent = 'No aplica';
     }
 
     fechaSalida.addEventListener('change', calcularDias);
     fechaRegreso.addEventListener('change', calcularDias);
 </script>
-
 </body>
 </html>
 
