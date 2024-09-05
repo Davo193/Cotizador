@@ -8,7 +8,7 @@ body {
 header {
     display: flex;
     min-height: 70px;
-    background-color: #4D617B;
+    background-color: #28b6ea;
     align-items: center; 
     padding: 10px;
     justify-content: space-between; 
