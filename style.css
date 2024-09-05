@@ -113,3 +113,28 @@ th {
 .tarifa {
     font-weight: bold;
 }
+
+/* Estilo para ocultar el contenido en modo vertical */
+#landscape-content {
+    display: none;
+  }
+  
+  #portrait-warning {
+    display: block;
+    text-align: center;
+    margin-top: 20%;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Mostrar el contenido normal en modo horizontal */
+  @media screen and (orientation: landscape) {
+    #landscape-content {
+      display: block;
+    }
+    
+    #portrait-warning {
+      display: none;
+    }
+  }
+  
