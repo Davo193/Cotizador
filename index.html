@@ -9,7 +9,7 @@
 <header>
 <div class="logo">
         <img src="celestelogo.png" alt="Tarjeta Celeste" class="logo-img">
-        <h1 class="logo-nombre"> </h1>
+        <h1 class="logo-nombre">  </h1>
         <nav>
             <a href="index.html" class="nav-link">Diario</a>
             <a href="Multiviajes/Indexmultiviajes.html" class="nav-link">Multiviajes</a>
@@ -50,6 +50,7 @@
                 <option value="100000">100K</option>
                 <option value="150000">150K</option>
                 <option value="250000">250K</option>
+                <option value="500000">500K</option>
             </select>
         </div>
         <button class="btn" onclick="mostrarTabla()">Ver</button>
@@ -146,6 +147,13 @@
                     actualizarPrecios250k(dias, 11, 17.6, 'tarifa75_250k', 'tarifa85_250k', 'tarifa86_250k');
                     actualizarPrecios250kPreex(dias, 12, 'tarifa75_250k_preex', 'tarifa85_250k_preex', 'tarifa86_250k_preex');
                 }); 
+        } else if (montoSeleccionado === '500000') {
+            fetch('500k.html')
+                .then(response => response.text())
+                .then(data => {
+                    tablaContainer.innerHTML = data;
+                    actualizarPrecios500k(dias, 14, 'tarifa75_500k', 'tarifa85_500k', 'tarifa86_500k');
+                });
         } else {
             alert('Por favor, seleccione una opción válida.');
         }
@@ -276,6 +284,17 @@
     }
     
     function actualizarPrecios250kPreex(dias, tarifa1, tarifa75Id, tarifa85Id, tarifa86Id) {
+        const tarifa75 = document.getElementById(tarifa75Id);
+        const tarifa85 = document.getElementById(tarifa85Id);
+        const tarifa86 = document.getElementById(tarifa86Id);
+
+        tarifa75.textContent = `$${(dias * tarifa1).toFixed(2)}`;
+        tarifa85.textContent = 'No aplica';
+        tarifa86.textContent = 'No aplica';
+    
+    }
+
+    function actualizarPrecios500k(dias, tarifa1, tarifa75Id, tarifa85Id, tarifa86Id) {
         const tarifa75 = document.getElementById(tarifa75Id);
         const tarifa85 = document.getElementById(tarifa85Id);
         const tarifa86 = document.getElementById(tarifa86Id);
