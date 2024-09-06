@@ -152,14 +152,5 @@ th {
   }
 }
 
-@media print {
-    /* Oculta todos los elementos al imprimir */
-    body * {
-        display: none;
-    }
-    /* Muestra solo el contenido que deseas imprimir */
-    #contenido, #contenido * {
-        display: block;
-    }
-}
+
 
