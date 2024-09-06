@@ -117,14 +117,6 @@ th {
 /* Agregaremos algo de estilo para visualizar el 
    elemento sobre el que vamos a realizar la prueba */
 
-.app {
-  background-color: black;
-  color: white;
-  font-size: 2rem;
-  padding: 40px;
-  text-align: center;
-}
-
 
 /* Esta es la parte que nos interesa */
 @media screen and (orientation: portrait) {
