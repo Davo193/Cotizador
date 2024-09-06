@@ -56,10 +56,9 @@
         </div>
         <button class="btn" onclick="mostrarTabla()">Ver</button>
     </div>
-
+<div id="contenido">
     <!-- Contenedor para mostrar la tabla -->
     <div id="tablaContainer"></div>
-</div>
 
 <script>
     const fechaSalida = document.getElementById('fechaSalida');
@@ -308,7 +307,15 @@
 
     fechaSalida.addEventListener('change', calcularDias);
     fechaRegreso.addEventListener('change', calcularDias);
-
+    
 </script>
+</div>
+<button onclick="imprimirPagina()">Imprimir o Guardar como PDF</button>
+
+    <script>
+        function imprimirPagina() {
+            window.print();  // Llama al cuadro de diálogo de impresión del navegador
+        }
+    </script>
 </body>
 </html>
