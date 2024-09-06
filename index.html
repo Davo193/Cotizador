@@ -74,7 +74,7 @@
             totalDias.textContent = `${dias} día(s)`;
         }
     }
-<div id="contenido">
+
     function mostrarTabla() {
         const montoSeleccionado = document.getElementById('monto').value;
         const tablaContainer = document.getElementById('tablaContainer');
@@ -309,13 +309,5 @@
     fechaRegreso.addEventListener('change', calcularDias);
     
 </script>
-</div>
-<button onclick="imprimirPagina()">Imprimir o Guardar como PDF</button>
-
-    <script>
-        function imprimirPagina() {
-            window.print();  // Llama al cuadro de diálogo de impresión del navegador
-        }
-    </script>
 </body>
 </html>
