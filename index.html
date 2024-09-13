@@ -6,10 +6,9 @@
     <title>Cotizador</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<div class="mensaje"></div>
 <header>
 <div class="logo">
-        <img src="celestelogo.png" alt="Tarjeta Celeste" class="logo-img">
+        <img src="celestelogo.png" alt="Tarjeta Celeste" class="logo-img" >
         <h1 class="logo-nombre">  </h1>
         <nav>
             <a href="index.html" class="nav-link">Diario</a>
@@ -39,7 +38,39 @@
             <div id="totalDias" class="total-days">0</div>
         </div>
         <div class="form-group">
-            <label for="monto">Seleccione el monto del beneficio:</label>
+            <label for="monto">Seleccione 3 tarifas:</label>
+            <select id="monto" name="monto">
+                <option value="">Seleccione un monto</option>
+                <option value="20000">20K</option>
+                <option value="30000">30K</option>
+                <option value="40000">40K</option>
+                <option value="50000">50K</option>
+                <option value="60000">60K</option>
+                <option value="80000">80K</option>
+                <option value="100000">100K</option>
+                <option value="150000">150K</option>
+                <option value="250000">250K</option>
+                <option value="500000">500K</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="monto"></label>
+            <select id="monto" name="monto">
+                <option value="">Seleccione un monto</option>
+                <option value="20000">20K</option>
+                <option value="30000">30K</option>
+                <option value="40000">40K</option>
+                <option value="50000">50K</option>
+                <option value="60000">60K</option>
+                <option value="80000">80K</option>
+                <option value="100000">100K</option>
+                <option value="150000">150K</option>
+                <option value="250000">250K</option>
+                <option value="500000">500K</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="monto"></label>
             <select id="monto" name="monto">
                 <option value="">Seleccione un monto</option>
                 <option value="20000">20K</option>
@@ -59,6 +90,7 @@
 
     <!-- Contenedor para mostrar la tabla -->
     <div id="tablaContainer"></div>
+</div>
 
 <script>
     const fechaSalida = document.getElementById('fechaSalida');
@@ -219,13 +251,13 @@
         tarifa86.textContent = `$${(dias * tarifa3).toFixed(2)}`;
     }
 
-    function actualizarPrecios60kPreex(dias, tarifa1, tarifa2, tarifa75Id, tarifa85Id, tarifa86Id) {
+    function actualizarPrecios60kPreex(dias, tarifa1, tarifa75Id, tarifa85Id, tarifa86Id) {
         const tarifa75 = document.getElementById(tarifa75Id);
         const tarifa85 = document.getElementById(tarifa85Id);
         const tarifa86 = document.getElementById(tarifa86Id);
 
         tarifa75.textContent = `$${(dias * tarifa1).toFixed(2)}`;
-        tarifa85.textContent = `$${(dias * tarifa2).toFixed(2)}`;
+        tarifa85.textContent = `$${(dias * tarifa1).toFixed(2)}`;
         tarifa86.textContent = 'No aplica';
     }
 
@@ -307,7 +339,7 @@
 
     fechaSalida.addEventListener('change', calcularDias);
     fechaRegreso.addEventListener('change', calcularDias);
-    
+
 </script>
 </body>
 </html>
